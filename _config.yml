@@ -30,7 +30,6 @@ markdown: kramdown
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
-  - jekyll-favicon
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
