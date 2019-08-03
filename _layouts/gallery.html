@@ -1,0 +1,66 @@
+---
+layout: default
+---
+
+<link type="text/css" rel="stylesheet" href="/assets/css/main.css">
+
+<div class="home">
+  <!-- {%- if page.title -%} -->
+  <!--   <h1 class="post-title" align="middle">{{ page.title }}</h1> -->
+  <!-- {%- endif -%} -->
+
+  {{ content }}
+
+  {%- if site.posts.size > 0 -%}
+    <h2 class="post-list-heading" align="middle">
+	  {{ page.list_title | default: "Gallery" }}
+    </h2>
+	{%- assign num_cols = 3 -%}
+	{%- assign num_rows = site.posts.size | divide_by: num_cols -%}
+	{%- assign regular = num_rows | times: num_cols -%}
+	{%- assign reminder = site.posts.size | minus: regular -%}
+	
+	{%- if reminder > 0 -%}
+	  {-% increment num_rows -%}
+	{%- endif -%}
+
+	{%- assign index = 0 -%}
+	<ul class="post-list">
+	  <div class="img-grid-col">
+		{%- for r in (1 .. num_rows) -%}
+		  <div class="img-grid-row">
+			{%- assign loop_base = r | minus: 1 | times: num_cols -%}
+			{%- for post in site.posts offset: loop_base limit: num_cols -%}
+            <a class="post-link" href={{ post.url | relative_url }}>
+			  {%- if post.image -%}
+			    <img src={{ post.image | relative_url}}>
+			  {%- else -%}
+				<img src="/assets/image/no_image.png">
+			  {%- endif -%}
+			</a>
+			{%- endfor -%}
+		  </div>
+		{%- endfor -%}
+	  </div>
+	</ul>
+  {%- endif -%}
+    <!-- <ul class="post-list"> -->
+    <!--   {%- for post in site.posts -%} -->
+    <!--   <li> -->
+    <!--     {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%} -->
+    <!--     <span class="post-meta">{{ post.date | date: date_format }}</span> -->
+    <!--     <h3> -->
+    <!--       <a class="post-link" href="{{ post.url | relative_url }}"> -->
+    <!--         {{ post.title | escape }} -->
+    <!--       </a> -->
+    <!--     </h3> -->
+    <!--     {%- if site.show_excerpts -%} -->
+    <!--       <p>{{ post.excerpt }}</p> -->
+    <!--     {%- endif -%} -->
+    <!--   </li> -->
+    <!--   {%- endfor -%} -->
+    <!-- </ul> -->
+
+    <!-- <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p> -->
+
+</div>

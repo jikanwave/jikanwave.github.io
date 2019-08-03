@@ -1,5 +1,5 @@
 ---
-layout: home_old
+layout: gallery
 title: Gallery
 permalink: /gallery/
 ---
