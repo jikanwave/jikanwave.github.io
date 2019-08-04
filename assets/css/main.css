@@ -28,6 +28,7 @@
 	margin-top:25px;
 	margin-bottom: 25px;
 	vertical-align: middle;
+}
 
 /* @media screen and (max-width: 800px) { */
 /*   .img-grid-col { */
@@ -36,10 +37,16 @@
 /*   } */
 /* } */
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 750px) {
   .img-grid-row {
-    flex: 100%;
+    flex-direction: column;
     max-width: 100%;
+  }
+
+  .img-grid-row a {
+	  margin-top:25px;
+	  margin-bottom: 25px;
+	  vertical-align: middle;
   }
 }
 
