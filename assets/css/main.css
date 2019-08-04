@@ -5,8 +5,8 @@
 }
 
 .img-grid-col {
-	/* flex: 33.33%; */
-	width: 33.33%;
+	flex: 33.33%;
+	max-width: 33.33%;
 }
 
 .img-grid-row img {

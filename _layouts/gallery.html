@@ -25,7 +25,7 @@ layout: default
 	{%- endif -%}
 
 	{%- assign index = 0 -%}
-	<ul class="post-list">
+	<div>
 	  <div class="img-grid-col">
 		{%- for r in (1 .. num_rows) -%}
 		  <div class="img-grid-row">
@@ -42,7 +42,7 @@ layout: default
 		  </div>
 		{%- endfor -%}
 	  </div>
-	</ul>
+	</div>
   {%- endif -%}
     <!-- <ul class="post-list"> -->
     <!--   {%- for post in site.posts -%} -->
