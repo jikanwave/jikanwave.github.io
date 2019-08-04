@@ -3,7 +3,7 @@
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: row;
-	justify-content: center;
+	justify-content: flex-start;
 }
 
 .img-grid-col {
@@ -18,12 +18,16 @@
 }
 
 .img-grid-row div {
-	margin-top: 25px;
-	margin-bottom: 25px;
+	margin: 25px auto;
 	/* margin-left: 32px;; */
 	/* margin-right: 32px; */
 	vertical-align: middle;
+	max-width: 33.33%;
 	flex: 33.33%;
+}
+
+.img-grid-row div:last-child {
+	margin: 25px 0;
 }
 
 /* .img-grid-row a:last-child { */
@@ -67,6 +71,7 @@
 	  margin-bottom: 25px;
 	  margin-right: 0px;
 	  vertical-align: middle;
+	  max-width: 50%;
 	  flex: 50%;
   }
 
