@@ -55,9 +55,9 @@
 @media screen and (max-width: 800px) {
   .img-grid-row img {
 	  min-height: auto;
-	  min-width: 200px;
-	  max-width: 200px;
-	  max-height: 200px;
+	  min-width: 150px;
+	  max-width: 150px;
+	  max-height: 150px;
 }
 	
   /* .img-grid-row { */
@@ -67,9 +67,7 @@
   /* } */
 
   .img-grid-row div {
-	  margin-top:25px;
-	  margin-bottom: 25px;
-	  margin-right: 0px;
+	  margin: 12px 0;
 	  vertical-align: middle;
 	  max-width: 50%;
 	  flex: 50%;
