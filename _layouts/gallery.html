@@ -25,11 +25,12 @@ layout: default
 	{%- endif -%}
 
 	{%- assign index = 0 -%}
-	  <div class="img-grid-col">
+	  <div class="img-grid-row">
 		{%- for r in (1 .. num_rows) -%}
-		  <div class="img-grid-row">
+		  <!-- <div class="img-grid-row"> -->
 			{%- assign loop_base = r | minus: 1 | times: num_cols -%}
-			{%- for post in site.posts offset: loop_base limit: num_cols -%}
+		  {%- for post in site.posts offset: loop_base limit: num_cols -%}
+		  <div align="middle">
             <a class="post-link" href={{ post.url | relative_url }}>
 			  {%- if post.image -%}
 			    <img src={{ post.image | relative_url}}>
@@ -37,8 +38,9 @@ layout: default
 				<img src="/assets/image/no_image.png">
 			  {%- endif -%}
 			</a>
-			{%- endfor -%}
 		  </div>
+			{%- endfor -%}
+		  <!-- </div> -->
 		{%- endfor -%}
 	  </div>
   {%- endif -%}
